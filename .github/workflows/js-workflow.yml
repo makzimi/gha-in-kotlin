@@ -9,11 +9,11 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Hello world action step
-        uses: ./ # Uses an action in the root directory
+      - name: Hello world custom action step
+        uses: ./.github/actions/hello-js-action/
         id: hello
         with:
-          who-to-greet: 'Maxon Pipendron'
+          who-to-greet: 'Maxon Pipendron 2'
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
